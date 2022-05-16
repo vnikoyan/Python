@@ -1,2 +1,2 @@
 import random
-print(int(random.random()*100))
+print(int(random.random()*1000))
