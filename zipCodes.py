@@ -8,14 +8,13 @@ MY_DICT = {'A': "Ньюфаундленд", 'B': "Новая Шотландия"
 
 
 zip = input("please enter the zipcode ------>")
-if zip[0].upper() in MY_DICT.keys():
-    if zip[1] == "0":
-        citytype = "village"
-    else:
-        citytype = "city"
-        identificator = zip[0]
-        identificator = identificator.upper()
-        region = MY_DICT.get(identificator)
-        print("The entered zip code belongs to the " + citytype + " " + region)
+if zip[0].upper() not in MY_DICT.keys():
+    raise Exception("Please enter a valid zip code")
+if zip[1] == "0":
+    citytype = "village"
 else:
-    print("Please enter a valid zip code")
+    citytype = "city"
+    identificator = zip[0]
+    identificator = identificator.upper()
+    region = MY_DICT.get(identificator)
+    print("The entered zip code belongs to the " + citytype + " " + region)
